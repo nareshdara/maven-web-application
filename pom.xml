@@ -90,12 +90,12 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>nareshdararelease</name>
-	      <url>http://13.232.40.202:8081/repository/nareshdararelease/</url>
+	      <url>http://13.233.229.21:8081/repository/nareshdararelease/</url>
 	    </repository>
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>nareshdarasnapshot </name>
-	      <url>http://13.232.40.202:8081/repository/nareshdarasnapshot/</url>
+	      <url>http://13.233.229.21:8081/repository/nareshdarasnapshot/</url>
 	    </snapshotRepository>
 	</distributionManagement>
 	

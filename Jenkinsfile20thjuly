@@ -14,7 +14,7 @@ node('master'){
     stage('CheckoutCode'){
       git credentialsId: '134795ec-ad1f-4983-8eb6-4b06b26f1ff7', url: 'https://github.com/nareshdara/maven-web-application.git'  
         }
-   /*     
+      
     stage('build'){
         sh "${mvnhome}/bin/mvn clean package"
         }    
@@ -24,7 +24,7 @@ node('master'){
     stage('Store Artifact into Nexus'){
         sh "${mvnhome}/bin/mvn deploy"
     }
-    */
+  
     stage('Deploy into Tomcat Server'){
         sshagent(['TomcatServer']) {
     sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.234.115.227:/opt/apache-tomcat-9.0.22/webapps/maven-web-application.war"

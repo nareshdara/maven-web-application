@@ -1,4 +1,5 @@
 node{
+    /*
     def mvnHome = tool name: 'maven3.6.1' , type: 'maven'
     echo "GitHub BranhName ${env.BRANCH_NAME}"
   echo "Jenkins Job Number ${env.BUILD_NUMBER}"
@@ -7,6 +8,7 @@ node{
   echo "Jenkins Home ${env.JENKINS_HOME}"
   echo "Jenkins URL ${env.JENKINS_URL}"
   echo "JOB Name ${env.JOB_NAME}"
+    */
     properties([
                 buildDiscarder(logRotator(numToKeepStr: '3')),
                 pipelineTriggers([

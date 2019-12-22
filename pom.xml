@@ -93,13 +93,13 @@
 	<distributionManagement>
 	    <repository>
 	      <id>nexus</id>
-	      <name>devrelease</name>
-	      <url>http://13.127.106.28:8081/repository/devrelease/</url>
+	      <name>release</name>
+	      <url>http://13.127.106.28:8081/repository/release/</url>
 	    </repository>
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>devsnapshot </name>
-	      <url>http://13.127.106.28:8081/repository/devsnapshot/</url>
+	      <name>snapshot </name>
+	      <url>http://13.127.106.28:8081/repository/snapshot/</url>
 	    </snapshotRepository>
 	</distributionManagement>
 	

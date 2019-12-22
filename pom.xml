@@ -16,13 +16,7 @@
 		<name>Mithun Technologies</name>
 		<url>http://mithuntechnologies.com/</url>
 	</organization>
-  <profile>
-    <id>sonar</id>
-        <activation>
-            <activeByDefault>true</activeByDefault>
-        </activation>
- </profile>  
-	 
+ 
 	<properties>
 		<!-- versions -->
 		

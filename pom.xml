@@ -93,12 +93,12 @@
 	<distributionManagement>
 	    <repository>
 	      <id>nexus</id>
-	      <name>release</name>
+	      <name>flipkartrelease</name>
 	      <url>http://13.127.106.28:8081/repository/release/</url>
 	    </repository>
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>snapshot </name>
+	      <name>flipkartsnapshot </name>
 	      <url>http://13.127.106.28:8081/repository/snapshot/</url>
 	    </snapshotRepository>
 	</distributionManagement>

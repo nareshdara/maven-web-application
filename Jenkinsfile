@@ -1,6 +1,6 @@
 node{
    
-    def mvnHome = tool name: 'maven3.6.1' , type: 'maven'
+    def mvnHome = tool name: 'maven3.6.3' , type: 'maven'
    /*
     echo "GitHub BranhName ${env.BRANCH_NAME}"
   echo "Jenkins Job Number ${env.BUILD_NUMBER}"
@@ -27,7 +27,7 @@ node{
      
     }
     
-/*
+
     stage('ExecuteSonarqubeReport'){
         sh "${mvnHome}/bin/mvn sonar:sonar"
     }
@@ -35,7 +35,7 @@ node{
         sh "${mvnHome}/bin/mvn deploy"
         
     }
-   
+/*   
     stage('DeployAppIntoTomcatServer'){
         sshagent(['tomcatserver']) {
        sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@http://13.233.17.201/opt/apache-tomcat-9.0.20/webapps/maven-web-application.war"

@@ -1,0 +1,24 @@
+version: 0.2
+
+phases:
+    install:
+        runtime-versions:
+            java: openjdk8
+    pre_build:
+        commands:
+            - echo CODEBUILD_RESOLVED_SOURCE_VERSION $CODEBUILD_RESOLVED_SOURCE_VERSION
+    build:
+        commands:
+            - mvn compile
+    post_build:
+        commands:
+            - mvn package
+            - mkdir artifact    <-- create folder to extract war file content
+            - unzip target/my.war -d artifact/    <-- unzip to that folder
+artifacts:
+    files:
+        - artifact/**/*   <-- reference all those files as the artifact
+    name: artifact
+cache:
+    paths:
+        - '/root/.m2/**/*'

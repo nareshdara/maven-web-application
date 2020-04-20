@@ -100,7 +100,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>devsnapshot </name>
-	      <url></url>
+	      <url>http://ec2-13-233-33-169.ap-south-1.compute.amazonaws.com:8081/repository/devsnapshot/</url>
 	    </snapshotRepository>
 	</distributionManagement>
 	

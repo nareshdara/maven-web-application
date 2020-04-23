@@ -23,7 +23,7 @@
 		<spring.version>5.0.2.RELEASE</spring.version>
 		<junit.version>4.12</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://ec2-13-232-239-208.ap-south-1.compute.amazonaws.com:9000/</sonar.host.url>
+		<sonar.host.url>http://ec2-13-233-67-231.ap-south-1.compute.amazonaws.com:9000/</sonar.host.url>
 		<sonar.login>062f87a49bfd1c0de4bdcb2e5198dd10d7bb2bf9</sonar.login>
 		
 		
@@ -95,12 +95,12 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>deverelease</name>
-	      <url>http://ec2-13-233-229-79.ap-south-1.compute.amazonaws.com:8081/repository/deverelease/</url>
+	      <url>http://ec2-13-234-77-120.ap-south-1.compute.amazonaws.com:8081/repository/deverelease/</url>
 	    </repository>
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>devesnapshot </name>
-	      <url>http://ec2-13-233-229-79.ap-south-1.compute.amazonaws.com:8081/repository/devesnapshot/</url>
+	      <url>http://ec2-13-234-77-120.ap-south-1.compute.amazonaws.com:8081/repository/devesnapshot/</url>
 	    </snapshotRepository>
 	</distributionManagement>
 	

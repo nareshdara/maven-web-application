@@ -95,12 +95,12 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>deverelease</name>
-	      <url>http://ec2-13-234-77-120.ap-south-1.compute.amazonaws.com:8081/repository/deverelease/</url>
+	      <url>http://ec2-15-206-158-231.ap-south-1.compute.amazonaws.com:8082/repository/deverelease/</url>
 	    </repository>
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>devesnapshot </name>
-	      <url>http://ec2-13-234-77-120.ap-south-1.compute.amazonaws.com:8081/repository/devesnapshot/</url>
+	      <url>http://ec2-15-206-158-231.ap-south-1.compute.amazonaws.com:8082/repository/devesnapshot/</url>
 	    </snapshotRepository>
 	</distributionManagement>
 	

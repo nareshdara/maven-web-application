@@ -19,7 +19,7 @@ node{
                   ])
                   
     stage('CheckoutCode'){
-     git credentialsId: '449b0313-4e2a-417c-a1ba-bf855847e563', url: 'https://github.com/nareshdara/maven-web-application.git'   
+     git credentialsId: 'git_credentials', url: 'https://github.com/nareshdara/maven-web-application.git'   
     }
     stage('Buildthe Code'){
         sh "${mvnHome}/bin/mvn clean package"
@@ -38,7 +38,7 @@ node{
 /*   
     stage('DeployAppIntoTomcatServer'){
         sshagent(['tomcatserver']) {
-       sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@http://13.233.17.201/opt/apache-tomcat-9.0.20/webapps/maven-web-application.war"
+       sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.126.16.225:/opt/apache-tomcat-9.0.34/webapps/maven-web-application.war"
 }
         
     }

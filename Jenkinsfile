@@ -34,14 +34,12 @@ node{
     stage('store ArtifactintoNexus'){
         sh "${mvnHome}/bin/mvn deploy"
         
-    }
-/*   
+    }  
     stage('DeployAppIntoTomcatServer'){
         sshagent(['tomcatserver']) {
        sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.126.16.225:/opt/apache-tomcat-9.0.34/webapps/maven-web-application.war"
 }
         
     }
-   */
   
 }

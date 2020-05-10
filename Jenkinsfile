@@ -27,10 +27,11 @@ node{
      
     }
     
-
+/*
     stage('ExecuteSonarqubeReport'){
         sh "${mvnHome}/bin/mvn sonar:sonar"
     }
+    */
     stage('store ArtifactintoNexus'){
         sh "${mvnHome}/bin/mvn deploy"
         
@@ -42,6 +43,6 @@ node{
 }
         
     }
-    */
+   */
   
 }

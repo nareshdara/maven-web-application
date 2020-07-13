@@ -1,6 +1,6 @@
 node{
    
-    def mvnHome = tool name: 'maven-3.6.3' , type: 'maven'
+    def mvnHome = tool name: 'maven3.6.3' , type: 'maven'
    /*
     echo "GitHub BranhName ${env.BRANCH_NAME}"
   echo "Jenkins Job Number ${env.BUILD_NUMBER}"
@@ -38,7 +38,7 @@ node{
   
    stage('DeployAppIntoTomcatServer'){
         sshagent(['mvenwebapplicatiobforpipeline']) {
-       sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.232.153.18:/opt/apache-tomcat-9.0.36/webapps/maven-web-application.war"
+       sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.234.20.233:/opt/apache-tomcat-9.0.36/webapps/maven-web-application.war"
 }
         
     }

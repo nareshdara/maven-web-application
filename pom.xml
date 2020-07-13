@@ -16,18 +16,23 @@
 		<name>Mithun Technologies</name>
 		<url>http://mithuntechnologies.com/</url>
 	</organization>
-
+ 
 	<properties>
 		<!-- versions -->
 		
 		<spring.version>5.0.2.RELEASE</spring.version>
 		<junit.version>4.12</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://ec2-13-233-238-10.ap-south-1.compute.amazonaws.com:9000/</sonar.host.url>
+		<sonar.host.url>http://ec2-13-126-106-84.ap-south-1.compute.amazonaws.com:9000/</sonar.host.url>
+		<sonar.login>e32f5cdef97a04ac6dd0fe953dfd034bea94037b</sonar.login>
+		
+		
 		
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
+	  
+	  
 
 	<dependencies>
 
@@ -89,13 +94,13 @@
 	<distributionManagement>
 	    <repository>
 	      <id>nexus</id>
-	      <name>flipkartrelease</name>
-	      <url>http://ec2-13-233-42-87.ap-south-1.compute.amazonaws.com:8082/repository/deverelease/</url>
+	      <name>mavenrelease</name>
+	      <url>http://ec2-13-234-20-233.ap-south-1.compute.amazonaws.com:8081/repository/mavenwebapp-release/</url>
 	    </repository>
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>flipkartsnapshot </name>
-	      <url>http://ec2-13-233-42-87.ap-south-1.compute.amazonaws.com:8082/repository/devesnapshot/</url>
+	      <name>mavensnapshot </name>
+	      <url>http://ec2-13-234-20-233.ap-south-1.compute.amazonaws.com:8081/repository/mavenwebapp-snapshot/</url>
 	    </snapshotRepository>
 	</distributionManagement>
 	

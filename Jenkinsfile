@@ -1,6 +1,6 @@
 node{
    
-    def mvnHome = tool name: 'maven-3.6.3' , type: 'maven'
+    def mvnHome = tool name: 'maven3.6.3' , type: 'maven'
    /*
     echo "GitHub BranhName ${env.BRANCH_NAME}"
   echo "Jenkins Job Number ${env.BUILD_NUMBER}"
@@ -19,7 +19,7 @@ node{
                   ])
                   
     stage('CheckoutCode'){
-     git credentialsId: '449b0313-4e2a-417c-a1ba-bf855847e563', url: 'https://github.com/nareshdara/maven-web-application.git'   
+     git credentialsId: 'git_credentials', url: 'https://github.com/nareshdara/maven-web-application.git'   
     }
     stage('Buildthe Code'){
         sh "${mvnHome}/bin/mvn clean package"
@@ -27,23 +27,21 @@ node{
      
     }
     
-
     stage('ExecuteSonarqubeReport'){
         sh "${mvnHome}/bin/mvn sonar:sonar"
     }
     
-   
     stage('store ArtifactintoNexus'){
         sh "${mvnHome}/bin/mvn deploy"
         
-    }
- 
-    stage('DeployAppIntoTomcatServer'){
+    }  
+  
+   stage('DeployAppIntoTomcatServer'){
         sshagent(['mvenwebapplicatiobforpipeline']) {
-       sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.232.153.18:/opt/apache-tomcat-9.0.36/webapps/maven-web-application.war"
+       sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.234.20.233:/opt/apache-tomcat-9.0.36/webapps/maven-web-application.war"
 }
         
     }
-  
  
+  
 }

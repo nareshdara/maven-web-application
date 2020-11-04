@@ -1,6 +1,6 @@
 node{
    
-    def mvnHome = tool name: 'maven-3.6.3' , type: 'maven'
+    def mvnHome = tool name: 'maven_3.6.3' , type: 'maven'
    /*
     echo "GitHub BranhName ${env.BRANCH_NAME}"
   echo "Jenkins Job Number ${env.BUILD_NUMBER}"
@@ -19,31 +19,30 @@ node{
                   ])
                   
   
-    stage('checkout the code'){
-        git credentialsId: 'mavenwebapp_git_credentials', url: 'https://github.com/nareshdara/maven-web-application.git'
-        
+    stage('checkout the source code'){
+       git credentialsId: 'test_freestyleproject', url: 'https://github.com/nareshdara/maven-web-application.git' 
     }
     stage('build the source code'){
         sh "${mvnHome}/bin/mvn clean package"
-        
     }
-    stage('get the source code'){
-        sh "${mvnHome}/bin/mvn sonar:sonar"
+    stage('code quality test'){
+        sh "${mvnHome}/bin/mvn clean sonar:sonar"
     }
     stage('store the artifact into nexus repository'){
-        sh "${mvnHome}/bin/mvn deploy"
-        
+        sh "${mvnHome}/bin/mvn clean deploy"
     }
     stage('deploy app into tomcat server'){
-        sshagent(['mavenwebapp_tomcat_credentials']) {
-    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.234.114.184:/opt/apache-tomcat-9.0.36/webapps/maven-web-application.war"
+        sshagent(['test1_pipelineproject']) {
+   sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.233.141.76:/opt/apache-tomcat-8.5.59/webapps/maven-web-application.war"
 }
-        
     }
-    stage('send an email notification'){
-        emailext body: '''Regards,
-Naresh''', subject: 'mavenwebapp', to: 'nareshdara200@gmail.com'
-        
+    stage('Email Notification'){
+        emailext body: '''This is a pipeline test project
+
+Thanks
+Best Regards,
+Naresh
+''', subject: 'This is a pipeline test project', to: 'nareshdara200@gmail.com'
     }
     
     

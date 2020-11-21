@@ -23,8 +23,8 @@
 		<spring.version>5.0.2.RELEASE</spring.version>
 		<junit.version>4.12</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://ec2-13-233-77-202.ap-south-1.compute.amazonaws.com:9000/</sonar.host.url>
-		<sonar.login>e6281c3e024917785d40e157be177e317af9d471</sonar.login>
+		<sonar.host.url>http://ec2-15-206-70-100.ap-south-1.compute.amazonaws.com:9000/</sonar.host.url>
+		<sonar.login>3e15bbab3224f43feac7accfedc4397c274f1007</sonar.login>
 		
 		
 		
@@ -95,12 +95,12 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>mavenrelease</name>
-	      <url>http://ec2-13-233-141-76.ap-south-1.compute.amazonaws.com:8081/repository/test_mavenwebapp_release/</url>
+	      <url>http://ec2-65-0-98-93.ap-south-1.compute.amazonaws.com:8081/repository/test_mavenwebapp_release/</url>
 	    </repository>
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>mavensnapshot </name>
-	      <url>http://ec2-13-233-141-76.ap-south-1.compute.amazonaws.com:8081/repository/test_mavenwebapp_snapshot/</url>
+	      <url>http://ec2-65-0-98-93.ap-south-1.compute.amazonaws.com:8081/repository/test_mavenwebapp_snapshot//</url>
 	    </snapshotRepository>
 	</distributionManagement>
 	

@@ -19,30 +19,30 @@ node{
                   ])
                   
   
-    stage('checkout the source code'){
-       git credentialsId: 'test_freestyleproject', url: 'https://github.com/nareshdara/maven-web-application.git' 
-    }
+     stage('checkout the source code'){
+        git credentialsId: 'test_maven_freestyle_project', url: 'https://github.com/nareshdara/maven-web-application.git'
+     }
     stage('build the source code'){
         sh "${mvnHome}/bin/mvn clean package"
     }
-    stage('code quality test'){
-        sh "${mvnHome}/bin/mvn clean sonar:sonar"
+    stage('code quality check'){
+        sh "${mvnHome}/bin/mvn sonar:sonar"
     }
-    stage('store the artifact into nexus repository'){
-        sh "${mvnHome}/bin/mvn clean deploy"
+    stage('store the artificat into nexus repository'){
+        sh "${mvnHome}/bin/mvn deploy"
     }
-    stage('deploy app into tomcat server'){
-        sshagent(['test1_pipelineproject']) {
-   sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.233.141.76:/opt/apache-tomcat-8.5.59/webapps/maven-web-application.war"
+    stage('deploy webapp into tomcat server'){
+        
+        sshagent(['test_maven_sshagent']) {
+   sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.232.203.3:/opt/apache-tomcat-9.0.40/webapps/maven-web-application.war"
 }
+        
     }
-    stage('Email Notification'){
-        emailext body: '''This is a pipeline test project
-Thanks
-Best Regards,
-Naresh
-''', subject: 'This is a pipeline test project', to: 'nareshdara200@gmail.com'
+    stage('send EmailNotification'){
+        
+        emailext body: '''this is for test message
+
+regards,
+Naresh''', subject: 'this is for test message', to: 'nareshdara200@gmail.com'
     }
-    
-    
 }

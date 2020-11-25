@@ -20,29 +20,30 @@ node{
                   
   
     stage('checkout the source code'){
-        git credentialsId: 'test_maven_freestyle_project', url: 'https://github.com/nareshdara/maven-web-application.git'
-     }
+       git credentialsId: 'mavenwebapp_freestyle', url: 'https://github.com/nareshdara/maven-web-application.git' 
+    }
+    
     stage('build the source code'){
         sh "${mvnHome}/bin/mvn clean package"
+        
     }
-    stage('code quality check'){
+    stage('code quality test'){
         sh "${mvnHome}/bin/mvn sonar:sonar"
     }
-    stage('store the artificat into nexus repository'){
+    stage('store the artifact into nexus repository'){
         sh "${mvnHome}/bin/mvn deploy"
     }
-    stage('deploy webapp into tomcat server'){
-        
-        sshagent(['test_maven_sshagent']) {
-   sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.232.203.3:/opt/apache-tomcat-9.0.40/webapps/maven-web-application.war"
-}
+    stage('deploy application into tomcat server'){
+        sshagent(['mavenwebapp_sshagent']) {
+        sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@15.206.159.53:/opt/apache-tomcat-9.0.40/webapps/maven-web-application.war"
         
     }
-    stage('send EmailNotification'){
-        
-        emailext body: '''this is for test message
+}
+stage ('send an email notification'){
+    emailext body: '''maventestwebapp
 
 regards,
-Naresh''', subject: 'this is for test message', to: 'nareshdara200@gmail.com'
-    }
+Naresh''', subject: 'maventestwebapp', to: 'nareshdara200@gmail.com'
+}
+    
 }
